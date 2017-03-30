@@ -1,0 +1,32 @@
+
+<div class="container-fluid" ng-controller="patientsController">
+  <div class="row">
+    <div class="col-xs-12">
+      Search : <input type="text" placeholder="Search for series" ng-model="seriesRecord">
+    </div>
+    <div class="col-xs-12">
+      <ul class="list-group">
+        <li class="list-group-item-info" ng-repeat="item in seriesRecords | filter : seriesRecord">
+
+          <div class="container-fluid">
+            <a class="list-group-item" ui-sref="instances({instanceID : item.ID })">
+              <h3 class="ui-li-heading">{{item.MainDicomTags.ProtocolName}}</h3>
+              <p>BodyPartExamined: <strong>{{item.MainDicomTags.BodyPartExamined}}</strong>
+              </p>
+              <p>Modality: <strong>{{item.MainDicomTags.Modality}}</strong>
+              </p>
+              <p>Manufacturer: <strong>{{item.MainDicomTags.Manufacturer}}</strong>
+              </p>
+              <p>OperatorsName: <strong>{{item.MainDicomTags.OperatorsName}}</strong>
+              </p>
+              <p>StationName: <strong>{{item.MainDicomTags.StationName}}</strong>
+              </p>
+              <p>Instances: <span class="badge">{{item.Instances.length}}</span></p>
+            </a>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

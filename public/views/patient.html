@@ -1,0 +1,27 @@
+
+<div class="container-fluid" ng-controller="patientController">
+  <div class="row">
+    
+    <div class="col-xs-12">
+      <ul class="list-group">
+        <li class="list-group-item-info">
+
+          <div class="container-fluid">
+            <a class="list-group-item" ui-sref="studies({studiesID : patientRecords.ID })">
+              <h3 class="ui-li-heading">{{patientRecords.MainDicomTags.PatientName}}</h3>
+              <p>
+                PatientBirthDate: <strong>{{patientRecords.MainDicomTags.PatientBirthDate}}</strong>
+              </p>
+              <p>PatientID: <strong>{{patientRecords.MainDicomTags.PatientID}}</strong>
+              </p>
+              <p>PatientSex: <strong>{{patientRecords.MainDicomTags.PatientSex}}</strong>
+              </p>
+              <p>Studies: <span class="badge">{{patientRecords.Studies.length}}</span></p>
+            </a>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

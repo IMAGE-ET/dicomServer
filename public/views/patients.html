@@ -1,0 +1,27 @@
+<div class="container-fluid" ng-controller="patientsController">
+  <div class="row">
+    <div class="col-xs-12" style="padding:1em;">
+      Search : <input type="text" placeholder="Search for patient" ng-model="patientRecord">
+    </div>
+    <div class="col-xs-12">
+      <ul class="list-group">
+        <li class="list-group-item-info" ng-repeat="item in patientRecords | filter : patientRecord">
+
+          <div class="container-fluid">
+            <a class="list-group-item" ui-sref="patient({patientID : '{{item.ID}}' })">
+              <h3 class="ui-li-heading">{{item.MainDicomTags.PatientName}}</h3>
+              <p>
+                PatientBirthDate: <strong>{{item.MainDicomTags.PatientBirthDate}}</strong>
+              </p>
+              <p>PatientID: <strong>{{item.MainDicomTags.PatientID}}</strong>
+              </p>
+              <p>PatientSex: <strong>{{item.MainDicomTags.PatientSex}}</strong>
+              </p>
+              <p>Records: <span class="badge">{{item.Studies.length}}</span></p>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

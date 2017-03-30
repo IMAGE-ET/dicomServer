@@ -1,0 +1,22 @@
+
+<div class="container-fluid" ng-controller="patientsController">
+  <div class="row">
+    
+    <div class="col-xs-12">
+      <ul class="list-group">
+        <li class="list-group-item-info" ng-repeat="item in instanceRecords">
+
+          <div class="container-fluid">
+            <a class="list-group-item" ui-sref="instance({instanceID : item.ID })">
+              <p>InstanceNumber: <strong>{{item.MainDicomTags.InstanceNumber}}</strong>
+              </p>
+              <p>AcquisitionNumber: <strong>{{item.MainDicomTags.InstanceNumber}}</strong>
+              </p>
+            </a>
+          </div>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

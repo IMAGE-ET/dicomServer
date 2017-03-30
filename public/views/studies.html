@@ -1,0 +1,34 @@
+
+<div class="container-fluid" ng-controller="patientsController">
+  <div class="row">
+    <div class="col-xs-12">
+      Search : <input type="text" placeholder="Search for study" ng-model="studyRecord">
+    </div>
+    <div class="col-xs-12">
+      <ul class="list-group">
+        <li class="list-group-item-info" ng-repeat="item in studyRecords | filter : studyRecord">
+
+          <div class="container-fluid">
+            <a class="list-group-item" ui-sref="series({seriesID : item.ID })">
+              <h3 class="ui-li-heading">{{item.PatientMainDicomTags.PatientName}}</h3>
+              <p>
+                PatientBirthDate: <strong>{{item.PatientMainDicomTags.PatientBirthDate}}</strong>
+              </p>
+              <p>PatientID: <strong>{{item.PatientMainDicomTags.PatientID}}</strong>
+              </p>
+              <p>PatientSex: <strong>{{item.PatientMainDicomTags.PatientSex}}</strong>
+              </p>
+              <p>StudyDescription: <strong>{{item.MainDicomTags.StudyDescription}}</strong>
+              </p>
+              <p>StudyDate: <strong>{{item.MainDicomTags.StudyDate}}</strong>
+              </p>
+              <p>StudyTime: <strong>{{item.MainDicomTags.StudyTime}}</strong>
+              </p>
+              <p>Series: <span class="badge">{{item.Series.length}}</span></p>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
